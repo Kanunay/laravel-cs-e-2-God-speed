@@ -47,7 +47,7 @@ class CategoryFormRequest extends FormRequest
                 'nullable','boolean'
             ],
             'status' => [
-                'nullable','boolean'
+                'nullable'
             ]
        ];
 

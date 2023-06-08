@@ -13,24 +13,13 @@
       $value =Auth::user()->role_as;
       @endphp
 
-      @if ($value == 0)
-         {{-- <h2 type="hidden" >No permissions</h2> --}}
-      @else
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('admin/add-category') }}">
-              <span data-feather="shopping-cart" class="align-text-bottom"></span>
-              Add Category (admin)
-            </a>
-          </li>
-      @endif
-
               @if ($value == 0)
               {{-- <h2 type="hidden" >No permissions</h2> --}}
           @else
             <li class="nav-item">
               <a class="nav-link" href="{{ url('admin/category') }}">
                 <span data-feather="file" class="align-text-bottom"></span>
-                View Category (admin)
+                Products 
               </a>
             </li>
           @endif
@@ -40,7 +29,7 @@
           {{-- <h2 type="hidden" >No permissions</h2> --}}
       @else
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ url('view-customer') }}">
           <span data-feather="users" class="align-text-bottom"></span>
           Customer List (admin)
         </a>
@@ -56,16 +45,7 @@
         </a> --}}
       </li>
      
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span data-feather="shopping-cart" class="align-text-bottom"></span>
-          Orders (user)
-        </a>
-        <a class="nav-link" href="#">
-          <span data-feather="file" class="align-text-bottom"></span>
-          Shopping Basket (user)
-        </a>
-      </li>
+    
       
       
      

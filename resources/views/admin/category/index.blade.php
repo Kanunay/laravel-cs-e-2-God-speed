@@ -7,9 +7,9 @@
     
     <div class="card mt-4">
         <div class="card-header">
-                <h4>View Category 
-                    <a href="{{ 'admin/add-category' }}" class="btn btn-primary btn-sm float-end">Add Category</a>
-                </h4>
+                <h1 class="py-2 mx-2">Products 
+                    <a href="{{ 'add-category' }}" class="btn btn-primary btn-l float-end py-3">Add product</a>
+                </h1>
         </div>
 
         <div class="card-body">

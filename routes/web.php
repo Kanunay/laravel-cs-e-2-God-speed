@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// the list of poeple
+Route::get('/view-customer', function () { return view('view-customer');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -33,5 +38,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('delete-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 
     // Routh::get('post',[App\Http\Controllers\Admin\PostController::class, 'index'] );    me making it pa
+
 
 });
