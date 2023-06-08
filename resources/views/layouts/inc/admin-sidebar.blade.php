@@ -3,10 +3,7 @@
   <div class="position-sticky pt-4 sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="{{ url('admin/dashboard') }}">
-          <span data-feather="home" class="align-text-bottom"></span>
-          Dashboard (all)
-        </a>
+        <h1 aria-current="page" style="font-size: 200%" class="px-3">Admin Tools</h1>
       </li>
 
       @php
@@ -29,9 +26,9 @@
           {{-- <h2 type="hidden" >No permissions</h2> --}}
       @else
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('view-customer') }}">
+        <a class="nav-link" href="{{ url('admin/view-customer') }}">
           <span data-feather="users" class="align-text-bottom"></span>
-          Customer List (admin)
+          Users List
         </a>
       </li>
       @endif
@@ -51,30 +48,6 @@
      
     </ul>
 
-            
-          @if ($value == 0)
-          {{-- <h2 type="hidden" >No permissions</h2> --}}
-      @else
-      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-        <span>Internal (admin)</span>
-  
-      </h6>
-      <ul class="nav flex-column mb-2">
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="users" class="align-text-bottom"></span>
-            Employees (admin)
-          </a>
-        </li>
-       
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-            Finance (admin)
-          </a>
-        </li>
-      </ul>
-      @endif
 
 
 
