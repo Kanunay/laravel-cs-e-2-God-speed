@@ -41,3 +41,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::get('/view-customer', function () { return view('view-customer');});
 
 });
+
+Route::get('/review', function () {
+    return view('review');
+});
