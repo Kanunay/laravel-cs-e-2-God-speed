@@ -25,9 +25,9 @@
                     <input type="text" name="name" class="form-control">
                 </div>
 
-                <div class="mb-3" hidden="hidden" >
-                    <label for="">Slug</label>
-                    <input type="text" name="slug" class="form-control" value="ignore">
+                <div class="mb-3" >
+                    <label for="">Price</label>
+                    <input type="text" name="slug" class="form-control" value="">
                 </div>
 
                 <div class="mb-3">

@@ -8,7 +8,7 @@
             Food&Drive
         </a>
         <a class="navbar pd-0 margin-0"  href="{{ url('/review') }}">
-            Review
+            Reviews
         </a>
         </header>
 

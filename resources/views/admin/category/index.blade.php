@@ -22,6 +22,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Category Name</th>
+                        <th>Price</th>
                         <th>Image</th>
                         <th>Status</th>
                         <th>Edit</th>
@@ -32,7 +33,8 @@
                     @foreach ($category as $item)
                         <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->name }}</td>                            
+                            <td>{{ $item->name }}</td> 
+                            <td>{{ $item->slug }}</td>                           
                             <td><img src="{{ asset('uploads/category/' . $item->image) }}" width="50%" height="50%" alt="image">
                             </td>
                             <td>{{ $item->status == '1' ? 'Hidden':'Shown'}}</td>
