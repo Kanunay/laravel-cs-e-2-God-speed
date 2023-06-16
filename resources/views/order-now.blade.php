@@ -2,8 +2,6 @@
 
 @section('content')
 <?php
-
-// Assuming you have set up your database connection properly
 $dbHost = 'localhost';
 $dbName = 'laravel-cs';
 $dbUser = 'root';
@@ -45,14 +43,38 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $category['description']; ?></h5>
                             <p class="card-text">Price: <?php echo $category['slug']; ?></p>
+                            <button class="btn btn-primary add-to-cart" data-price="<?php echo $category['slug']; ?>">Add to Cart</button>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
+        <div class="sticky-footer bg-light py-3">
+            <div class="container">
+                <h4>Total Price: <span id="total-price">0</span></h4>
+            </div>
+        </div>
     </div>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize the total price
+            var totalPrice = 0;
+
+            // Handle add to cart button click
+            $('.add-to-cart').click(function() {
+                var price = $(this).data('price');
+                totalPrice += parseFloat(price);
+                $('#total-price').text(totalPrice.toFixed(2));
+            });
+        });
+    </script>
 </body>
 </html>
+
 
 
 
