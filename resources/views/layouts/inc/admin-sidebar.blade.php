@@ -9,7 +9,6 @@
       @php
       $value =Auth::user()->role_as;
       @endphp
-
               @if ($value == 0)
               {{-- <h2 type="hidden" >No permissions</h2> --}}
           @else

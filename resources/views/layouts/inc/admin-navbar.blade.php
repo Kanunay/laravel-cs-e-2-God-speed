@@ -7,9 +7,24 @@
         <a class="navbar-brand bg-transparent pd-0 margin-0" href="{{ url('/') }}">
             Food&Drive
         </a>
-        <a class="navbar pd-0 margin-0"  href="{{ url('/review') }}">
-            Reviews
+        <a class="navbar pd-0 margin-0"  href="{{ url('/order-now') }}">
+            <p class="px-1">Order now</p>
         </a>
+        <a class="navbar pd-0 margin-0"  href="{{ url('/review') }}">
+            <p class="px-1">Reviews</p>
+        </a>
+
+        
+        
+        <p class="px-1">Admin Tools:</p>
+        <a class="navbar pd-0 margin-0"  href="{{ url('admin/category') }}"> 
+            <p class="px-1">Products</p>
+        </a>
+        <a class="navbar pd-0 margin-0"  href="{{ url('admin/view-customer') }}">
+            <p class="px-1">Users</p>
+        </a>
+
+        
         </header>
 
         {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

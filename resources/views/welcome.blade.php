@@ -14,6 +14,8 @@
 
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+
+
 <!-- Carousel wrapper -->
 <div id="carouselVideoExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
 
@@ -24,7 +26,9 @@
         </video>
       </div>
     </div>
-      
+
+    
+
     <section id="about" class="about my-4">
         <div class="container-fluid">
   

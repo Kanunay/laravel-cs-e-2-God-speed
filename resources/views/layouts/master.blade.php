@@ -23,8 +23,19 @@
     
     <div class="row">
     
+
+        {{-- Navbar stuff --}}
     @include('layouts.inc.admin-navbar')
+    {{-- Navbar-Side stuff --}}
+    {{-- @php
+    $value =Auth::user()->role_as;
+    @endphp
+
+    @if ($value == 0)
+     <h2 type="hidden" >No permissions</h2>
+    @else
     @include('layouts.inc.admin-sidebar')
+     @endif --}}
     
     {{-- {{ Auth::user()->role_as == 1 ? 'admin-navbar' : 'admin-navbar' }} --}}
 

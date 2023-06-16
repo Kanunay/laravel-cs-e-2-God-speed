@@ -1,63 +1,62 @@
 @extends('layouts.app')
 
 @section('content')
+<?php
+
+// Assuming you have set up your database connection properly
+$dbHost = 'localhost';
+$dbName = 'laravel-cs';
+$dbUser = 'root';
+$dbPass = '';
+
+try {
+    $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
+
+// Fetch data from the "categories" table
+$query = $pdo->query("SELECT image, description, slug FROM categories");
+$categories = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Catalog</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <title>Image Calculator</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom styles -->
+    <style>
+        .calculator-img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
 </head>
 <body>
-
-    <div class="container mt-4">
+    <div class="container">
+        <h1 class="mt-4">Image Calculator</h1>
         <div class="row">
-            @foreach($categories as $category)
+            <?php foreach ($categories as $category): ?>
                 <div class="col-md-3">
                     <div class="card mb-4">
-                        <img class="card-img-top" src="/uploads/category/{{ $category->image }}" alt="{{ $category->name }}">
+                        <img class="card-img-top calculator-img" src="{{ asset('uploads/category/' . $category['image']) }}" alt="Image">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $category->name }}</h5>
-                            <p class="card-text">{{ $category->description }}</p>
-                            <p class="card-text">Price: <span id="price-{{ $category->id }}">{{ $category->price }}</span></p>
-                            <button class="btn btn-primary add-to-cart" data-id="{{ $category->id }}">Add to Cart</button>
+                            <h5 class="card-title"><?php echo $category['description']; ?></h5>
+                            <p class="card-text">Price: <?php echo $category['slug']; ?></p>
                         </div>
                     </div>
                 </div>
-            @endforeach
+            <?php endforeach; ?>
         </div>
     </div>
-
-    <!-- Sticky footer -->
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    Total Price: <span id="total-price">0</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            var totalPrice = 0;
-
-            // Event handler for add to cart button
-            $('.add-to-cart').click(function() {
-                var categoryId = $(this).data('id');
-                var price = parseFloat($('#price-' + categoryId).text());
-
-                // Update total price
-                totalPrice += price;
-                $('#total-price').text(totalPrice.toFixed(2));
-            });
-        });
-    </script>
 </body>
 </html>
+
+
+
+
 
 
 @endsection

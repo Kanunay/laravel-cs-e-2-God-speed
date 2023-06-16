@@ -34,15 +34,17 @@
                     {{ __('Welcome back administrator') }}
                     @else
                     {{ __('You are logged in!') }}
-                    @endif
-
+                    @endif                  
+                    
                     
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
+
 
 <script src="{{ asset('assets/js/feather.min.js') }}"></script>
 <script src="{{ asset('assets/js/java.js') }}"></script>
