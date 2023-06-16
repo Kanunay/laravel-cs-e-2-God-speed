@@ -7,6 +7,11 @@
         <a class="navbar-brand bg-transparent pd-0 margin-0" href="{{ url('/') }}">
             Food&Drive
         </a>
+
+        <a class="navbar pd-0 margin-0"  href="{{ url('/home') }}">
+            <p class="px-1">Home</p>
+        </a>
+
         <a class="navbar pd-0 margin-0"  href="{{ url('/order-now') }}">
             <p class="px-1">Order now</p>
         </a>
