@@ -13,7 +13,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpBNwQ_OJCyelBifDl1xeXWmFmiwtrX10&callback=initMap"></script>
 
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
+<body class="bg-dark">
+  
 
 
 <!-- Carousel wrapper -->
@@ -22,7 +23,7 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <video class="container-fluid d-flex align-items-center justify-content-center vh-80" autoplay loop muted>
-          <source src="{{ asset('uploads/category/foodph-1.mp4') }}" type="video/mp4" />
+          <source src="{{ asset('uploads/category/foodph-3.mp4') }}" type="video/mp4" />
         </video>
       </div>
     </div>
@@ -30,45 +31,51 @@
     
 
     <section id="about" class="about my-4">
-        <div class="container-fluid">
+        <div class="container-fluid bg-light my-5">
   
           <div class="row">
-  
-            <a href="{{ __('login') }}" class="col-lg-5 align-center img-fluid"><img style="width: 100%" src="{{ asset('uploads/category/foodph-4.png') }}" alt=""></a>
-  
-            <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
-  
-              <div class="content">
-                <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                </p>
-                <p class="fst-italic">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua.
-                </p>
-                <ul>
-                  <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                  <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                  <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                </ul>
-                <p>
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum
-                </p>
-              </div>
-  
+            <div class="col-lg-5 align-items-center">
+                <a href="{{ __('login') }}" class="d-block">
+                    <img class="img-fluid" src="{{ asset('uploads/order-now.png') }}" alt="{{ asset('uploads/category/foodph-4.png') }}">
+                </a>
             </div>
-  
-          </div>
-  
+            <div class="col-lg-7">
+                <div class="d-flex flex-column justify-content-center h-100">
+                    <div class="content">
+                        <h3 class="mb-4"><strong>About Us</strong></h3>
+                        <h1>Get In Touch</h1>
+                        <p class="mb-4">
+                            We are a catering company that handles orders ranging from landline to cell, and now even digital ordering.
+                        </p>
+                        <p class="fst-italic mb-4">
+                            Our Motto: To feel is to live and dine to thrive.
+                        </p>
+                        <ul class="list-unstyled">
+                            <li><i class="bx bx-check-double me-2"></i> Cell#: 0949 208 0969</li>
+                            <li><i class="bx bx-check-double me-2"></i> Address: Hilongos Leyte, Lamac</li>
+                            <li><i class="bx bx-check-double me-2"></i> Email: philipelizaga72@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        {{-- API MAP need edit lol --}}
-            <div class="container my-5">
-              <a href="https://goo.gl/maps/D4XgbrxbkUN9yf196"><h1>Come and visit us (google map)</h1></a>
-              <div id="map" class="w-100" style="height: 400px;"></div>
-            </div>
+        
+          
+                  {{-- API MAP need edit lol --}}
+                  <div class="container my-1 p-5 bg-light d-flex justify-content-center align-items-center">
+                    <div class="text-center">
+                        <a href="https://goo.gl/maps/D4XgbrxbkUN9yf196" class="text-decoration-none btn btn-outline-   btn-sm px-2">
+                            <h1 class="mb-4">Come and visit us (Google Maps)</h1>
+                        </a>
+                        <div id="map" style="height: 400px; width: 100%;"></div>
+                    </div>
+                </div>
+                
+
+        </div>
+
+
+            
             <script>
               function initMap() {
                 var center = { lat: 10.429913, lng: 124.725496 };
@@ -78,9 +85,11 @@
             </script>
             <script alt="{{ asset('uploads/category/map.png') }}" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpBNwQ_OJCyelBifDl1xeXWmFmiwtrX10&callback=initMap" async defer  ></script>
       </section>
-      <footer class="bg-dark text-white text-center py-3">
+      <footer class="bg-dark text-white text-center py-0">
         <div class="container">
-          <p>&copy; Copyright Something. All Rights Reserved </p>
+          <p>&copy; Copyright 2023 something for finals. All Rights Reserved </p>
+          <p>Created by Adrian Elizaga BSIT 3</p>
         </div>
       </footer>
+</body>
 @endsection

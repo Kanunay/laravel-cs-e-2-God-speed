@@ -26,8 +26,8 @@
                     <input type="text" name="name" value="{{ $category->name }}" class="form-control">
                 </div>
                 {{-- not use for now --}}
-                <div class="mb-3" hidden="hidden" >
-                    <label for="">Slug</label>
+                <div class="mb-3"  >
+                    <label for="">Price</label>
                     <input type="text" name="slug" value="{{ $category->slug }}"  class="form-control" value="ignore"> 
                 </div>
 

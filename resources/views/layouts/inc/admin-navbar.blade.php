@@ -1,36 +1,35 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-
-<nav class="navbar navbar-expand-md navbar-light bg-transparent shadow-sm">    
-    
-    <div class="container ">
-        <header class="navbar  sticky-top  flex-md-nowrap p-1 ">
-        <a class="navbar-brand bg-transparent pd-0 margin-0" href="{{ url('/') }}">
-            Food&Drive
-        </a>
-
-        <a class="navbar pd-0 margin-0"  href="{{ url('/home') }}">
-            <p class="px-1">Home</p>
-        </a>
-
-        <a class="navbar pd-0 margin-0"  href="{{ url('/order-now') }}">
-            <p class="px-1">Order now</p>
-        </a>
-        <a class="navbar pd-0 margin-0"  href="{{ url('/review') }}">
-            <p class="px-1">Reviews</p>
-        </a>
-
+<nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+    <div class="container">
+        <header class="navbar sticky-top flex-md-nowrap p-1">
+            <a class="pd-0 margin-0" href="{{ url('/') }}">
+                <img src="{{ asset('uploads/Titans-catering-logo2.png') }}" class="px-3 margin-0 " width="200px" height="60px" alt="">
+            </a>
         
+            <a class="navbar pd-0 margin-0" href="{{ url('/home') }}">
+                <button class="btn btn-outline-danger btn-sm px-3 me-2">Home</button>
+            </a>
         
-        <p class="px-1">Admin Tools:</p>
-        <a class="navbar pd-0 margin-0"  href="{{ url('admin/category') }}"> 
-            <p class="px-1">Products</p>
-        </a>
-        <a class="navbar pd-0 margin-0"  href="{{ url('admin/view-customer') }}">
-            <p class="px-1">Users</p>
-        </a>
-
+            <a class="navbar pd-0 margin-0" href="{{ url('/order-now') }}">
+                <button class="btn btn-outline-danger btn-sm px-3 me-2">Order now</button>
+            </a>
+                    
+            <a class="navbar pd-0 margin-0" href="{{ url('/review') }}">
+                <button class="btn btn-outline-danger btn-sm px-3 me-2">Reviews</button>
+            </a>
         
+            <p class="px-1">Admin Tools:</p>
+                    
+            <a class="navbar pd-0 margin-0" href="{{ url('admin/category') }}">
+                <button class="btn btn-outline-danger btn-sm px-3 me-2">Products</button>
+            </a>
+                    
+            <a class="navbar pd-0 margin-0" href="{{ url('admin/view-customer') }}">
+                <button class="btn btn-outline-danger btn-sm px-3 me-2">Users</button>
+            </a>
         </header>
+        
 
         {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -82,3 +81,5 @@
         </div>
     </div>
 </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

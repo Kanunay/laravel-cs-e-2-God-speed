@@ -17,11 +17,7 @@ try {
 $query = $pdo->query("SELECT image, description, slug FROM categories");
 $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Image Calculator</title>
+    <title>Order Now</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom styles -->
@@ -31,10 +27,9 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
             max-height: 100px;
         }
     </style>
-</head>
-<body>
+
     <div class="container">
-        <h1 class="mt-4">Image Calculator</h1>
+        <h1 class=" my-4">Order Now</h1>
         <div class="row">
             <?php foreach ($categories as $category): ?>
                 <div class="col-md-3">

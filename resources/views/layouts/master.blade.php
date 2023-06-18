@@ -22,8 +22,6 @@
 <div class="container-fluid">
     
     <div class="row">
-    
-
         {{-- Navbar stuff --}}
     @include('layouts.inc.admin-navbar')
     {{-- Navbar-Side stuff --}}

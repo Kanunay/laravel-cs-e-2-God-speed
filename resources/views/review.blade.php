@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <body>
 
-<div class="container">
+<div class="container m-5">
   <div id="user-info" class="row"></div>
 </div>
 
@@ -12,7 +12,7 @@
 <script>
 $(document).ready(function() {
   $.ajax({
-    url: "https://randomuser.me/api/?results=5",
+    url: "https://randomuser.me/api/?results=12",
     dataType: "json",
     success: function(data) {
       var users = data.results;
