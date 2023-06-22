@@ -28,52 +28,55 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
         }
     </style>
 
-    <div class="container">
+<div class="container">
     @guest
     <h2 class="py-2">Ordering as guest! Please <a href="{{ route('login') }}">login</a> to access your account.</h2>
     @else
     <h2 class="py-2">Ordering as User!</h2>
     @endguest
 
-        <div class="row">
-
-            <?php foreach ($categories as $category): ?>
-                <div class="col-md-3">
-                    <div class="card mb-4">
-                        <img class="card-img-top calculator-img" src="{{ asset('uploads/category/' . $category['image']) }}" alt="Image">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $category['description']; ?></h5>
-                            <p class="card-text">Price: <?php echo $category['slug']; ?></p>
-                            <button class="btn btn-primary add-to-cart" data-price="<?php echo $category['slug']; ?>">Add to Cart</button>
-                        </div>
-                    </div>
+    <div class="row">
+        @foreach ($categories as $category)
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <img class="card-img-top calculator-img" src="{{ asset('uploads/category/' . $category['image']) }}" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $category['description'] }}</h5>
+                    <p class="card-text">Price: {{ $category['slug'] }}</p>
+                    <button class="btn btn-primary add-to-cart" data-price="{{ $category['slug'] }}">Add to Cart</button>
+                    <div class="decimal-value">Decimal Value: 0</div>
                 </div>
-            <?php endforeach; ?>
-            
-        </div>
-        <div class="sticky-footer bg-light py-3">
-            <div class="container">
-                <h4>Total Price: <span id="total-price">0</span></h4>
             </div>
         </div>
+        @endforeach
     </div>
+    <div class="">
+        <div class="container">
+            <h4 class="fixed-bottom container bg-light py-2">Total Price: $<span id="total-price">0</span></h4>
+        </div>
+    </div>
+</div>
 
-    <!-- Include jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Initialize the total price
-            var totalPrice = 0;
+<!-- Include jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize the total price
+        var totalPrice = 0;
 
-            // Handle add to cart button click
-            $('.add-to-cart').click(function() {
-                var price = $(this).data('price');
-                totalPrice += parseFloat(price);
-                $('#total-price').text(totalPrice.toFixed(2));
-            });
+        // Handle add to cart button click
+        $('.add-to-cart').click(function() {
+            var price = parseFloat($(this).data('price'));
+            var decimalValue = parseFloat($(this).siblings('.decimal-value').text().trim().substring(14));
+            decimalValue += 1;
+            $(this).siblings('.decimal-value').text('Decimal Value: ' + decimalValue.toFixed(1));
+            totalPrice += price;
+            $('#total-price').text(totalPrice.toFixed(2));
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
 
