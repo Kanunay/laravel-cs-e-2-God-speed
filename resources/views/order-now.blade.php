@@ -29,8 +29,14 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
     </style>
 
     <div class="container">
-        <h1 class=" my-4">Order Now</h1>
+    @guest
+    <h2 class="py-2">Ordering as guest! Please <a href="{{ route('login') }}">login</a> to access your account.</h2>
+    @else
+    <h2 class="py-2">Ordering as User!</h2>
+    @endguest
+
         <div class="row">
+
             <?php foreach ($categories as $category): ?>
                 <div class="col-md-3">
                     <div class="card mb-4">
@@ -43,6 +49,7 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             <?php endforeach; ?>
+            
         </div>
         <div class="sticky-footer bg-light py-3">
             <div class="container">

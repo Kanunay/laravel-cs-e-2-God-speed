@@ -40,10 +40,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 });
 
+
 Route::get('/review', function () {
     return view('review');
 });
-
+// * need to place in role_user stuff
 Route::get('/order-now', function () {
     return view('order-now');
 });

@@ -7,7 +7,7 @@
 <div class="container m-5">
   <div id="user-info" class="row"></div>
 </div>
-
+{{-- Moving this script make the code not work? --}}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
