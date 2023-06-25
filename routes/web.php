@@ -48,4 +48,8 @@ Route::get('/review', function () {
 Route::get('/order-now', function () {
     return view('order-now');
 });
+// Used for testing
+Route::get('/testing', function () {
+    return view('testing');
+});
 

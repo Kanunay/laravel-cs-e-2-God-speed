@@ -18,19 +18,30 @@
             <a class="navbar pd-0 margin-0" href="{{ url('/review') }}">
                 <button class="btn btn-outline-danger btn-sm px-3 me-2">Reviews</button>
             </a>
-        
-            <p class="px-1">Admin Tools:</p>
+            @guest
+            <h1 hidden>Admin tools are hidden</h1>
+            @else
+            @php
+             $value =Auth::user()->role_as;
+            @endphp
+            @if ($value == 0)
+            {{-- <h2 type="hidden" >No permissions</h2> --}}
+             @else
+             <p class="px-1">Admin Tools:</p>
                     
-            <a class="navbar pd-0 margin-0" href="{{ url('admin/category') }}">
-                <button class="btn btn-outline-danger btn-sm px-3 me-2">Products</button>
-            </a>
-                    
-            <a class="navbar pd-0 margin-0" href="{{ url('admin/view-customer') }}">
-                <button class="btn btn-outline-danger btn-sm px-3 me-2">Users</button>
-            </a>
+             <a class="navbar pd-0 margin-0" href="{{ url('admin/category') }}">
+                 <button class="btn btn-outline-danger btn-sm px-3 me-2">Products</button>
+             </a>
+                     
+             <a class="navbar pd-0 margin-0" href="{{ url('admin/view-customer') }}">
+                 <button class="btn btn-outline-danger btn-sm px-3 me-2">Users</button>
+             </a>
+            @endif
+            @endguest
+
         </header>
         
-
+        
         {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
             
