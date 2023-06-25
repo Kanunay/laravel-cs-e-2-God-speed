@@ -56,7 +56,7 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
                             <p class="card-text">Description: {{ $category['description'] }}</p>
                             <p class="card-text">Price: {{ $category['slug'] }}</p>
                             <button class="btn btn-primary add-to-cart" data-price="{{ $category['slug'] }}">Add to Cart</button>
-                            <div class="units">Units: 0</div>
+                            <div class="units">Units: 0</div>                            
                         </div>
                     </div>
                 </div>
@@ -73,22 +73,24 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
                 <div class=" fixed-right collapse " id="sidebar-collapse">
                     <ul class="list-group selected-categories" id="selected-categories"></ul>
                 </div>
+                <div class="sticky-footer bg-light py-3">
+                    <div class="container">
+                        <h4 class="container bg-light py-2">Total Price: $<span id="total-price">0</span></h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
 
-    <div class="sticky-footer bg-light py-3">
-        <div class="container">
-            <h4 class="fixed-bottom container bg-light py-2">Total Price: $<span id="total-price">0</span></h4>
-        </div>
-    </div>
+    
 </div>
 
 <!-- Include jQuery and Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
+    
     $(document).ready(function() {
         // Initialize the total price
         var totalPrice = 0;
@@ -101,9 +103,11 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
             $(this).siblings('.units').text('Units: ' + units);
             totalPrice += price;
             $('#total-price').text(totalPrice.toFixed(2));
-
+            // *don't know 
+            // var number = category;
+            // var plusNumber = number + '1';
             var category = $(this).siblings('.card-title').text();
-            $('#selected-categories').append('<li>' + category + '</li>');
+            $('#selected-categories').append('<li>' + category + numberss +'</li>');
         });
     });
 </script>
