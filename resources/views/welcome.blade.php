@@ -36,13 +36,21 @@
           <div class="row">
             <div class="col-lg-5 align-items-center">
                 <a href="{{ __('login') }}" class="d-block">
-                    <img class="img-fluid" src="{{ asset('uploads/order-now.png') }}" alt="{{ asset('uploads/category/foodph-4.png') }}">
+
+                  {{-- Using --}}
+                  {{-- https://web.postman.co --}}
+                  {{-- https://unsplash.com --}}
+
+                  <img class="img-fluid" src="https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixid=M3w0NjczMjJ8MHwxfHNlYXJjaHwxfHxmb29kc3xlbnwwfHx8fDE2ODc4Nzk5MzJ8MA&ixlib=rb-4.0.3" class="img-fluid" alt="API Image">
+                  
                 </a>
             </div>
             <div class="col-lg-7">
                 <div class="d-flex flex-column justify-content-center h-100">
                     <div class="content">
-                        <h3 class="mb-4"><strong>About Us</strong></h3>
+                      <a href="{{ __('login') }}" class="d-block">
+                        <h3 class="mb-4 text-danger "><strong>Order Now</strong></h3>
+                      </a>
                         <h1>Get In Touch</h1>
                         <p class="mb-4">
                             We are a catering company that handles orders ranging from landline to cell, and now even digital ordering.
@@ -58,18 +66,30 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
           
                   {{-- API MAP need edit lol --}}
-                  <div class="container my-1 p-5 bg-light d-flex justify-content-center align-items-center">
-                    <div class="text-center">
-                        <a href="https://goo.gl/maps/D4XgbrxbkUN9yf196" class="text-decoration-none btn btn-outline-   btn-sm px-2">
-                            <h1 class="mb-4">Come and visit us (Google Maps)</h1>
+                  <div class="container my-1 p-5 bg-light d-flex justify-content-center align-items-center ">
+                    <div class="text-center bg-dark">
+                        <a href="https://goo.gl/maps/D4XgbrxbkUN9yf196" class="text-decoration-none btn btn-outline    btn-sm px-2">
+                            <h1 class="mb-4 text-light">Come and visit us (Google Maps)</h1>
                         </a>
                         <div id="map" style="height: 400px; width: 100%;"></div>
                     </div>
                 </div>
+          </div>
                 
 
         </div>
