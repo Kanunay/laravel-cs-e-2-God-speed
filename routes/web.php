@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,3 +53,6 @@ Route::get('/testing', function () {return view('testing');
 });
 // create review lol
 Route::get('/create-review', function () { return view('create-review');});
+
+// Reviews version 2 CRUD
+Route::resource('reviews', ReviewController::class);
