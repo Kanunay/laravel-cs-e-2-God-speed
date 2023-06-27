@@ -18,12 +18,13 @@
 
 
 <!-- Carousel wrapper -->
-<div id="carouselVideoExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+<div id="carouselVideoExample" class="carousel slide carousel-fade rounded" data-mdb-ride="carousel">
 
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <video class="container-fluid d-flex align-items-center justify-content-center vh-80" autoplay loop muted>
-          <source src="{{ asset('uploads/category/foodph-3.mp4') }}" type="video/mp4" />
+    <div class="carousel-inner rounded">
+      <div class="carousel-item active rounded">
+        <video class="container-fluid d-flex align-items-center justify-content-center vh-80 rounded" autoplay loop muted>
+          <source class="hover-overlay   rounded" src="{{ asset('uploads/category/foodph-3.mp4') }}" type="video/mp4" />
+          
         </video>
       </div>
     </div>
@@ -41,15 +42,15 @@
                   {{-- https://web.postman.co --}}
                   {{-- https://unsplash.com --}}
 
-                  <img class="img-fluid" src="https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixid=M3w0NjczMjJ8MHwxfHNlYXJjaHwxfHxmb29kc3xlbnwwfHx8fDE2ODc4Nzk5MzJ8MA&ixlib=rb-4.0.3" class="img-fluid" alt="API Image">
+                  <img class="img-fluid hover-overlay ripple shadow-1-strong rounded" src="https://images.unsplash.com/photo-1576402187878-974f70c890a5?ixid=M3w0NjczMjJ8MHwxfHNlYXJjaHwxfHxmb29kc3xlbnwwfHx8fDE2ODc4Nzk5MzJ8MA&ixlib=rb-4.0.3" class="img-fluid" alt="API Image">
                   
                 </a>
             </div>
             <div class="col-lg-7">
-                <div class="d-flex flex-column justify-content-center h-100">
+                <div class="d-flex flex-column justify-content-center h-100" >
                     <div class="content">
                       <a href="{{ __('login') }}" class="d-block">
-                        <h3 class="mb-4 text-danger "><strong>Order Now</strong></h3>
+                        <h3 class="mb-4 text-danger btn btn-outline-warning"  ><strong >Order Now</strong></h3>
                       </a>
                         <h1>Get In Touch</h1>
                         <p class="mb-4">
@@ -83,10 +84,10 @@
                   {{-- API MAP need edit lol --}}
                   <div class="container my-1 p-5 bg-light d-flex justify-content-center align-items-center ">
                     <div class="text-center bg-dark">
-                        <a href="https://goo.gl/maps/D4XgbrxbkUN9yf196" class="text-decoration-none btn btn-outline    btn-sm px-2">
-                            <h1 class="mb-4 text-light">Come and visit us (Google Maps)</h1>
+                        <a href="https://goo.gl/maps/D4XgbrxbkUN9yf196" class="text-decoration-none btn btn-outline  rounded   btn-sm px-2">
+                            <h1 class="mb-4 text-light rounded">Come and visit us (Google Maps)</h1>
                         </a>
-                        <div id="map" style="height: 400px; width: 100%;"></div>
+                        <div class="rounded" id="map" style="height: 400px; width: 100%;"></div>
                     </div>
                 </div>
           </div>
