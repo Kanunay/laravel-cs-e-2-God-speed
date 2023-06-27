@@ -38,18 +38,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     // the list of poeple
     Route::get('/view-customer', function () { return view('view-customer');});
 
+    
+
 });
 
 
-Route::get('/review', function () {
-    return view('review');
+Route::get('/review', function () {return view('review');
 });
 // * need to place in role_user stuff
-Route::get('/order-now', function () {
-    return view('order-now');
+Route::get('/order-now', function () {return view('order-now');
 });
 // Used for testing
-Route::get('/testing', function () {
-    return view('testing');
+Route::get('/testing', function () {return view('testing');
 });
-
+// create review lol
+Route::get('/create-review', function () { return view('create-review');});
